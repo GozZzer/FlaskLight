@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>LED-Stripes->Overview</title>
+{% endblock %}
+
+{% block current %}
+<div class="overview">
+    <div class="speed">
+        {% if speed %}
+        <h3>Current Speed: {{ speed }}</h3>
+        {% else %}
+        <h3>Current Speed: 0</h3>
+        {% endif %}
+        <a href="/speed/">Speed</a>
+    </div>
+    <div class="color">
+        {% if color %}
+        <a style="color:{{color}}"><h3>Current Color</h3></a>
+        {% else %}
+        <a style="color:#ff0000"><h3>Current Color</h3></a>
+        {% endif %}
+        <a href="/color/">Color</a>
+    </div>
+    <div class="enable">
+        <form action="/enable/" method="POST">
+            {% if enabled %}
+            <input type="checkbox" name="enable" id="enable" checked>
+            {% else %}
+            <input type="checkbox" name="enable" id="enable">
+            {% endif %}
+            <label for="enable">Enable</label>
+            <input type="submit" name="check" id="check" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}

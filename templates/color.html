@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>LED-Stripes->Color</title>
+{% endblock %}
+
+{% block current %}
+<div class="speed">
+    {% if color %}
+    <a style="color:{{ color }}">
+    <h3>Current Color</h3>
+    {% else %}
+    <h3>Current Color</h3>
+    </a>
+    {% endif %}
+    <form action="/color/" method="POST">
+        <input type="color" id="color" name="color" value="{{color}}">
+        <input type="submit" value="Set Color">
+    </form>
+    <form action="/"><input type="submit" value="Done"></form>
+</div>
+{% endblock %}

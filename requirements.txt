@@ -1,0 +1,4 @@
+adafruit-circuitpython-busdevice
+adafruit-circuitpython-bitbangio
+apa102
+Flask
